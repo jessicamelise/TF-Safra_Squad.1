@@ -34,5 +34,43 @@
       },
       "code": "3"
     }
+  ],
+  "banks": [
+    {
+      "accounts": [
+        {
+          "accountManager": {
+            "email": "teste@teste.com"
+          },
+          "agency": "1234-5",
+          "accountNumber": "123344-6",
+          "creditExpenses": 300,
+          "balance": 10000,
+          "accountExtract": {
+            "value": 20000
+          }
+        }
+      ],
+      "bankNumber": "123",
+      "name": "Nu Bank"
+    },
+    {
+      "accounts": [
+        {
+          "accountManager": {
+            "email": "teste@teste.com"
+          },
+          "agency": "1234-5",
+          "accountNumber": "123344-6",
+          "creditExpenses": 300,
+          "balance": 50000,
+          "accountExtract": {
+            "value": 10000
+          }
+        }
+      ],
+      "bankNumber": "123",
+      "name": "Nu Bank"
+    }
   ]
 }

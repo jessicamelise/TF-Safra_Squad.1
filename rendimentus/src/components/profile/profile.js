@@ -5,7 +5,7 @@ import { CreditOffers } from './creditOffers/creditOffers.js';
 import { Header } from '../header/index.js';
 import { useHistory } from "react-router-dom";
 import './profile.css';
-import { loadProducts } from "./loadApi.js"
+import { loadProducts, loadBanks } from "./loadApi.js"
 
 export const Profile = () => {
   const [banks, setBanks] = useState([]);
@@ -19,7 +19,7 @@ export const Profile = () => {
 
   useEffect(() => {
     loadBanks().then(result =>
-      setBanks(result));
+      setBanks(result.banks));
   }, []);
 
   useEffect(() => {
@@ -27,27 +27,18 @@ export const Profile = () => {
       setProducts(result.myProducts));
   }, []);
 
-  const loadBanks = async () => {
-    try {
-      const getBanksApi = await fetch("https://jsonbox.io/box_ddb0ab5da8d69da8c315/banks");
-      const response = await getBanksApi.json();
-      return response;
-    }
-    catch (err) {
-      console.error("We got a problem to fetch the information", err);
-    };
-  };
-
   const sumBalanceAccount = (banks) => {
     return banks.reduce((total, bank) => total += bank.accounts[0].balance, 0);
   };
 
   const sumCreditExpenses = (banks) => {
+    let creditArray = [];
     let totalCredit = 0;
     banks.forEach(bank => {
       let extract = bank.accounts[0].accountExtract;
-      totalCredit += extract.reduce((total, launch) => total += launch.value, 0);
+      creditArray.push(extract);
     });
+    totalCredit += creditArray.reduce((total, launch) => total += launch.value, 0);
     return totalCredit;
   };
 
@@ -87,12 +78,12 @@ export const Profile = () => {
             agency={bank.accounts[0].agency}
             accountNumber={bank.accounts[0].accountNumber}
             balance={bank.accounts[0].balance}
-            creditExpenses={300}
+            creditExpenses={bank.accounts[0].creditExpenses}
             onClick={`/statement/${bank.name}`}
             accountManager={bank.accounts[0].accountManager.email}
             // eslint-disable-next-line
-            creditExpenses={bank.accounts[0].accountExtract
-              .reduce((total, launch) => total += launch.value, 0)}
+            // creditExpenses={bank.accounts[0].accountExtract
+            //   .reduce((total, launch) => total += launch.value, 0)}
           />
         ).reverse()}
       </section>

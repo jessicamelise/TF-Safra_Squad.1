@@ -47,7 +47,7 @@ p {
   display: block;
   color: #E3B15A;
   width: 100vw;
-  position: fixed;
+  /* position: fixed; */
   bottom: 0px;
   height: 80px;
 }
