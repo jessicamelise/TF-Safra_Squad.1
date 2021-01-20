@@ -5,6 +5,7 @@ import { CreditOffers } from './creditOffers/creditOffers.js';
 import { Header } from '../header/index.js';
 import { useHistory } from "react-router-dom";
 import './profile.css';
+import { loadProducts } from "./loadApi.js"
 
 export const Profile = () => {
   const [banks, setBanks] = useState([]);
@@ -23,19 +24,8 @@ export const Profile = () => {
 
   useEffect(() => {
     loadProducts().then(result =>
-      setProducts(result));
+      setProducts(result.myProducts));
   }, []);
-
-  const loadProducts = async () => {
-    try {
-      const getBanksApi = await fetch("https://jsonbox.io/box_ddb0ab5da8d69da8c315/myProducts");
-      const response = await getBanksApi.json();
-      return response;
-    }
-    catch (err) {
-      console.error("We got a problem to fetch the information", err);
-    };
-  };
 
   const loadBanks = async () => {
     try {
@@ -69,6 +59,7 @@ export const Profile = () => {
       return (<></>);
     };
   };
+  console.log(products)
 
   return (
     <>
@@ -81,12 +72,14 @@ export const Profile = () => {
             key={index}
             agency={product.client.agency}
             accountNumber={product.client.accountNumber}
+            bankNumber={product.client.bankNumber}
+            bankName={product.client.bankName}
             product={product.code}
           />
         )}
       </section>
       <section className='cards-profile'>
-        <h3>Minhas contas</h3>
+        <h3>Minhas Contas</h3>
         {banks.map((bank, index) =>
           <CardProfile
             key={index}
