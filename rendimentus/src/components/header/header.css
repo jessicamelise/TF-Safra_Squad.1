@@ -1,78 +1,88 @@
-.account-info{
+.account-info {
   align-self: flex-end;
   font-size: 18px;
-  /* margin-right: 10px; */
   font-family: 'Roboto Slab', serif; 
-  
 }
-.back{
+
+.back {
   height:3vh;
   width: 33.33vw;
 }
-.client-info{
+
+.client-info {
   width: 100vw;
-  color:#E3B15A;
+  color: #E3B15A;
   display: flex;
   justify-content: space-around;
   height: 3vh;
   font-family: Roboto Slab;
-
 }
-.client-account{
+
+.client-account {
   margin: revert;
   font-size: 14px;
 }
-.client-name{
-  color:#E3B15A;
+
+.client-name {
+  color: #E3B15A;
   align-self:end;
   height: 27px;
   font-size: 24px;
   font-family: Roboto Slab;
 }
-.header{
+
+.header {
   background: #1E2044;
   position: fixed;
   top: 0px;
   height: 14vh;
   width: 100vw;
- 
 }
-.images-header{
+
+.images-header {
   width: 100vw;
   place-items: baseline;
   display: flex;
   justify-content: space-between;
 }
-.img-back{
+
+.img-back {
   height: 2.5vh;
   padding-left: 2vw;
 }
-.img-logo{
+
+.img-logo {
   padding-top: 1vh;
 }
-.logo{ 
+
+.logo { 
   text-align: center;  
   width: 33.33vw;
 }
-.logo-image{
-  fill:#E3B15A
+
+.logo-image {
+  fill: #E3B15A;
 }
-.logo-logout{
+
+.logo-logout {
   display: flex;
   width: 100vw;
   height: 52px;
   border-bottom: 2px solid #00003c44;
 }
-.logout{  
+
+.logout {  
   text-align: end;
   width: 33.33vw;
   cursor: pointer;
 }
-.logout-image{
+
+.logout-image {
   padding-right: 5vw;;
   height:3vh;
 }
-.name-li{
+
+.name-li {
   align-self: flex-end;
 }
 
@@ -81,25 +91,24 @@
   width: 33.33vw;
 }
 
-
-@media(min-width: 900px){
-  .client-name{
+@media(min-width: 900px) {
+  .client-name {
     font-size: 35px;
   }
-  .client-account{
+  .client-account {
     font-size: 19px;
   }
-  .header{
+  .header {
     height: 18vh;
   }
-  .img-logo{
+  .img-logo {
     height:11vh;
   }
   .logout-image {
     padding-right: 2vw;
     height: 5vh;
-}
- .img-back {
-  height: 4vh;
-}
+  }
+  .img-back {
+    height: 4vh;
+  }
 }

@@ -42,23 +42,23 @@
   text-align: center;
 }
 
-.see-statement{
+.see-statement {
   text-align: center;
   background-color: #1E2044;
-  color: #E3B15A
+  color: #E3B15A;
 }
 
-.icon-card{
+.icon-card {
   width: 30%;
 }
 
-.span-date-value{
+.span-date-value {
   display: flex;
   justify-content: space-between;
 }
 
 @media only screen and (min-width: 900px) {
-  .div-extract{
+  .div-extract {
     width: 30%;
   }
 }

@@ -1,7 +1,8 @@
-.footer-images{
+.footer-images {
   height: 72%;
 }
-.footer{
+
+.footer {
   background:#1E2044;
   height: 8vh;
   width: 100vw;
@@ -12,16 +13,19 @@
   left: 0;
   bottom: 0;
 }
-.div-footer{
+
+.div-footer {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 34%;
   height: 100%;
 }
-.footer-background-blue{
-  background:#1E2044;
+
+.footer-background-blue {
+  background: #1E2044;
 }
-.footer-background-white{
-  background:#ffffff;
+
+.footer-background-white {
+  background: #ffffff;
 }

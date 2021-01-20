@@ -16,7 +16,6 @@ export const Header = () => {
 
   useEffect(() => {
     loadApiGetUsers().then((data) => {
-      console.log(data)
       let name = data.client.map(item => item.name).reduce((acc, client) => {
         acc += `<p>${client.name}</p>`;
         return acc;
