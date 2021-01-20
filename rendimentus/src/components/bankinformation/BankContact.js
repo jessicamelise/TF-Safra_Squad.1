@@ -3,7 +3,7 @@ import './bankinformation.css';
 import { Header } from "../header/index.js";
 import { loadApiGetBanks } from "./loadApi.js";
 import { useLocation } from "react-router-dom";
-import Footer from '../footer';
+import { Footer } from '../footer';
 
 export const BankContact = () => {
   const [contactManager, setContactManager] = useState([]);
@@ -12,13 +12,13 @@ export const BankContact = () => {
 
   useEffect(() => {
     loadApiGetBanks().then((client) => {
-      setContactManager(client.find(item => item.name === location.pathname.split("/")[2]).accounts[0].accountManager)
+      setContactManager(client.find(item => item.name === location.pathname.split("/")[2]).accounts[0].accountManager);
     });
-  }, []);
+  }, []); // eslint-disable-line
 
   useEffect(() => {
     loadApiGetBanks().then((client) => setContactCenter(client.find(item => item.name === location.pathname.split("/")[2])));
-  }, []);
+  }, []); // eslint-disable-line
 
   return (
     <>
@@ -37,4 +37,5 @@ export const BankContact = () => {
       <Footer />
     </>
   );
-}
+
+};

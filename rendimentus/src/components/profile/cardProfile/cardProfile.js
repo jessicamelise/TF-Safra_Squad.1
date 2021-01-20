@@ -1,6 +1,6 @@
 import React from 'react';
 import { useHistory } from "react-router-dom";
-import "../../../../node_modules/font-awesome/css/font-awesome.min.css"
+import "../../../../node_modules/font-awesome/css/font-awesome.min.css";
 
 export const CardProfile = (props) => {
   let history = useHistory();
@@ -17,9 +17,10 @@ export const CardProfile = (props) => {
         <p>CC: {props.accountNumber}</p>
       </div>
       <div className='card-balance'>
-        <p className='first-p'><i class="fa fa-money"></i> {props.balance.toFixed(2)}</p>
-        <p className='first-p'><i class="fa fa-credit-card"></i> {props.creditExpenses.toFixed(2)}</p>
+        <p className='first-p'><i className="fa fa-money"></i> {props.balance.toFixed(2)}</p>
+        <p className='first-p'><i className="fa fa-credit-card"></i> {props.creditExpenses.toFixed(2)}</p>
       </div>
     </div>
   );
+  
 };

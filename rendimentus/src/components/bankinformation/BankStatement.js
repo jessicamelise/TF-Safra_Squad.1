@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import './bankinformation.css';
 import { Header } from "../header/index.js";
 import { loadApiGetBanks } from "./loadApi.js";
-import Footer from '../footer';
+import { Footer } from '../footer';
 
 export const BankStatement = () => {
   const [extract, setExtract] = useState([]);
@@ -13,8 +13,7 @@ export const BankStatement = () => {
     loadApiGetBanks().then((client) => {
       setExtract(client.find(item=>item.name === location.pathname.split("/")[2]).accounts[0].accountExtract);
     });
-  }, []);
-
+  }, []); // eslint-disable-line
 
   return (
     <>
@@ -37,4 +36,5 @@ export const BankStatement = () => {
       <Footer />
     </>
   );
-}
+
+};

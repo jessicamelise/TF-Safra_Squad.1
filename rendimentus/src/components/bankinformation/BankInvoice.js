@@ -3,10 +3,9 @@ import './bankinformation.css';
 import { useLocation, useHistory } from "react-router-dom";
 import { Header } from "../header/index.js";
 import { loadApiGetBanks } from "./loadApi.js";
-import Footer from '../footer';
-import Images from '../images/images.js';
-import Card from '../../assests/card-blue.svg';
-
+import { Footer } from '../footer';
+import { Images } from '../images/images.js';
+import { Card } from '../../assests/card-blue.svg';
 
 export const BankInvoice = () => {
   const [invoice, setInvoice] = useState([]);
@@ -17,11 +16,11 @@ export const BankInvoice = () => {
     loadApiGetBanks().then((client) => {
       setInvoice(client.find(item=>item.name === location.pathname.split("/")[2]).accounts[0].accountExtract);
     });
-  }, []);
+  }, []); // eslint-disable-line
 
   const sumExtract = () => {
-    return invoice.reduce((total, currentValue) => total += currentValue.value,0)
-  }
+    return invoice.reduce((total, currentValue) => total += currentValue.value,0);
+  };
 
   const handleClick = (path) => {
     history.push(path);
@@ -33,7 +32,7 @@ export const BankInvoice = () => {
       <h1 className="h-extract">Fatura</h1>
       <section className="section">
         <div className="div-extract text-center">
-          <Images class="icon-card" src={Card} />
+          <Images className="icon-card" src={Card} />
           <p className="p-size">R$ {sumExtract().toFixed(2)}</p>
         </div>
         <div className="div-extract p-margin see-statement">
@@ -43,4 +42,5 @@ export const BankInvoice = () => {
       <Footer />
     </>
   );
-}
+
+};

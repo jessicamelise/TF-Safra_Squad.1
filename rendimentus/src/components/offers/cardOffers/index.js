@@ -1,17 +1,14 @@
 import React from 'react';
-import { useHistory } from "react-router-dom";
-
 
 export const CardOffers = (props) => {
 
   const handleClick = () => {
     if (window.confirm('Você tem interesse nesse produto?')) {
-      alert('Em breve a instituição financeira entrará em contato com você!')
-      console.log(`Interesse recebedo!`)
+      alert('Em breve a instituição financeira entrará em contato com você!');
     } else {
-      alert("cancelado")
+      alert("cancelado");
     }
-  }
+  };
 
   return (
     <div className={`card-offers ${props.hasBank}`} onClick={() => handleClick()}>
@@ -28,4 +25,5 @@ export const CardOffers = (props) => {
       </div>
     </div>
   );
-}
+
+};

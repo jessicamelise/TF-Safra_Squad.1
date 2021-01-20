@@ -1,15 +1,14 @@
 import React from "react";
-import Input from "../input/Input";
-import { useHistory} from "react-router-dom";
+import { Input } from "../input/Input";
+import { useHistory } from "react-router-dom";
 import "./form.css";
 
-
-const Form = (props) => {
+export const Form = (props) => {
   let history = useHistory();
 
   const handleClick = () => {
-        history.push("/profile")
-    }
+    history.push("/profile");
+  };
 
   return (
     <form className="form-login">
@@ -19,5 +18,5 @@ const Form = (props) => {
       <button className="button-login" onClick={handleClick}>Consultar</button>
     </form>
   );
-}
-export default Form;
+
+};
