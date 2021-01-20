@@ -59,7 +59,6 @@ export const Profile = () => {
       return (<></>);
     };
   };
-  console.log(products)
 
   return (
     <>
