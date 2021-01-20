@@ -1,0 +1,38 @@
+{
+  "client": [
+    {
+      "id": 1,
+      "name": "Jéssica Melise",
+      "cpf": "000.000.000-00"
+    }
+  ],
+  "myProducts": [
+    {
+      "client": {
+        "agency": "1234-5",
+        "accountNumber": "123344-6",
+        "bankNumber": "123",
+        "bankName": "Nu Bank"
+      },
+      "code": "1"
+    },
+    {
+      "client": {
+        "agency": "5678-9",
+        "accountNumber": "998770-0",
+        "bankNumber": "456",
+        "bankName": "Itaú"
+      },
+      "code": "2"
+    },
+    {
+      "client": {
+        "agency": "0124-7",
+        "accountNumber": "000897-0",
+        "bankNumber": "789",
+        "bankName": "Banco do Brasil"
+      },
+      "code": "3"
+    }
+  ]
+}
