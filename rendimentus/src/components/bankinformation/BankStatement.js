@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useLocation } from "react-router-dom";
 import './bankinformation.css';
 import { Header } from "../header/index.js";
-import { loadApiGetBanks } from "./loadApi.js";
+import { loadBanks } from "../../api/loadApi.js";
 import { Footer } from '../footer';
 
 export const BankStatement = () => {
@@ -10,8 +10,14 @@ export const BankStatement = () => {
   let location = useLocation();
 
   useEffect(() => {
-    loadApiGetBanks().then((client) => {
-      setExtract(client.find(item=>item.name === location.pathname.split("/")[2]).accounts[0].accountExtract);
+    loadBanks().then((client) => {
+      console.log(location.pathname.split("/")[2])
+      setExtract(client.find(item=>{
+        console.log()
+        // item.name === location.pathname.split("/")[2]
+      })
+      // .accounts[0].accountExtract
+      );
     });
   }, []); // eslint-disable-line
 

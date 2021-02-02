@@ -5,7 +5,7 @@ import logout from '../../assests/logout.svg';
 import back from '../../assests/back.svg';
 import './header.css';
 import { useHistory, useLocation } from "react-router-dom";
-import { loadApiGetUsers } from "./loadApi.js";
+import { loadApiGetUsers } from "../../api/loadApi.js";
 
 export const Header = () => {
   const [name, setName] = useState([]);

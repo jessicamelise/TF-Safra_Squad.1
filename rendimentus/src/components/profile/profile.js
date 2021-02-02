@@ -5,7 +5,7 @@ import { CreditOffers } from './creditOffers/creditOffers.js';
 import { Header } from '../header/index.js';
 import { useHistory } from "react-router-dom";
 import './profile.css';
-import { loadProducts, loadBanks } from "./loadApi.js"
+import { loadProducts, loadBanks } from "../../api/loadApi.js";
 
 export const Profile = () => {
   const [banks, setBanks] = useState([]);
@@ -18,13 +18,8 @@ export const Profile = () => {
   };
 
   useEffect(() => {
-    loadBanks().then(result =>
-      setBanks(result.banks));
-  }, []);
-
-  useEffect(() => {
-    loadProducts().then(result =>
-      setProducts(result.myProducts));
+    loadBanks().then(result => setBanks(result.banks));
+    loadProducts().then(result => setProducts(result.myProducts));
   }, []);
 
   const sumBalanceAccount = (banks) => {
