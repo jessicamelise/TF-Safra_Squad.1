@@ -41,7 +41,7 @@ export const BankInvoice = () => {
           <Images className="icon-card" src={Card} />
           <p className="p-size">R$ {sumExtract().toFixed(2)}</p>
         </div>
-        <div className="div-extract p-margin see-statement">
+        <div className="div-extract p-margin see-statement cursor">
           <p onClick={() => handleClick(`/statement/${location.pathname.split("/")[2]}`)}>Ver Extrato Completo</p>
         </div>
       </section>

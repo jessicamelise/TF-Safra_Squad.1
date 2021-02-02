@@ -10,7 +10,7 @@ export const CardProfile = (props) => {
   };
 
   return (
-    <div className='card' onClick={() => handleClick()}>
+    <div className={props.className} onClick={() => handleClick()}>
       <h2 className='bank'>{props.bankNumber} / {props.bankName}</h2>
       <div className='card-account'>
         <p className='first-p'>Ag: {props.agency}</p>

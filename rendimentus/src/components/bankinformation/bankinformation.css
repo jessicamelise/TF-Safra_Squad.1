@@ -58,6 +58,10 @@
   justify-content: space-between;
 }
 
+.cursor {
+  cursor: pointer;
+}
+
 @media only screen and (min-width: 900px) {
   .div-extract {
     width: 30%;

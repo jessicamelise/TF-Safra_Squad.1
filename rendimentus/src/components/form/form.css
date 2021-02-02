@@ -16,6 +16,7 @@
   border-radius: 4px;
   width: 90%;
   border: none;
+  cursor: not-allowed;
 }
 
 .button-login {
@@ -30,6 +31,7 @@
   font-family: 'Roboto Slab', serif;
   font-weight: bold;
   color: #1E2044;
+  cursor: pointer;
 }
 
 @media only screen and (min-width: 900px) {

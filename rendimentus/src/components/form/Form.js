@@ -13,7 +13,7 @@ export const Form = (props) => {
   return (
     <form className="form-login">
       <label className="label-login">
-        <Input className="input-login" onChange={props.onChangeLogin} />
+        <Input className="input-login" onChange={props.onChangeLogin} placeholder="000.000.000-00" readOnly="readOnly"/>
       </label>
       <button className="button-login" onClick={handleClick}>Consultar</button>
     </form>

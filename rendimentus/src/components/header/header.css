@@ -5,7 +5,7 @@
 }
 
 .back {
-  height:3vh;
+  height: 3vh;
   width: 33.33vw;
 }
 
@@ -49,6 +49,7 @@
 .img-back {
   height: 2.5vh;
   padding-left: 2vw;
+  cursor: pointer;
 }
 
 .img-logo {

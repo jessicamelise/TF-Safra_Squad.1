@@ -67,6 +67,7 @@ export const Profile = () => {
         <h3>Minhas Contas</h3>
         {banks.map((bank, index) =>
           <CardProfile
+            className="card cursor"
             key={index}
             bankNumber={bank.bankNumber}
             bankName={bank.name}
