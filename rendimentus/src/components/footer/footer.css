@@ -1,6 +1,5 @@
 .footer-images {
   height: 72%;
-  cursor: pointer;
 }
 
 .footer {
@@ -21,6 +20,7 @@
   justify-content: center;
   width: 34%;
   height: 100%;
+  cursor: pointer;
 }
 
 .footer-background-blue {
