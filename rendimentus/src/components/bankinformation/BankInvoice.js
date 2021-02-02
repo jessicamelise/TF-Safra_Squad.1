@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './bankinformation.css';
 import { useLocation, useHistory } from "react-router-dom";
 import { Header } from "../header/index.js";
-import { loadApiGetBanks } from "./loadApi.js";
+import { loadBanks } from "../../api/loadApi.js";
 import { Footer } from '../footer';
 import { Images } from '../images/images.js';
 import { Card } from '../../assests/card-blue.svg';
@@ -13,13 +13,19 @@ export const BankInvoice = () => {
   let history = useHistory();
 
   useEffect(() => {
-    loadApiGetBanks().then((client) => {
-      setInvoice(client.find(item=>item.name === location.pathname.split("/")[2]).accounts[0].accountExtract);
+    loadBanks().then((client) => {
+      setInvoice(client.banks.find(item=>item.name === location.pathname.split("/")[2]).accounts[0].accountExtract);
     });
-  }, []); // eslint-disable-line
+  }, [location.pathname]);
 
   const sumExtract = () => {
-    return invoice.reduce((total, currentValue) => total += currentValue.value,0);
+    let creditArray = [];
+    let totalCredit = 0;
+    invoice.forEach(value => {
+      creditArray.push(value.value);
+    });
+    totalCredit += creditArray.reduce((total, launch) => total += launch, 0);
+    return totalCredit;
   };
 
   const handleClick = (path) => {

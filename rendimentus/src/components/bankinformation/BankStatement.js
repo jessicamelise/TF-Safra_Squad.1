@@ -11,15 +11,9 @@ export const BankStatement = () => {
 
   useEffect(() => {
     loadBanks().then((client) => {
-      console.log(location.pathname.split("/")[2])
-      setExtract(client.find(item=>{
-        console.log()
-        // item.name === location.pathname.split("/")[2]
-      })
-      // .accounts[0].accountExtract
-      );
+      setExtract(client.banks.find(item => item.name === location.pathname.split("/")[2]).accounts[0].accountExtract);
     });
-  }, []); // eslint-disable-line
+  }, [location.pathname]);
 
   return (
     <>
@@ -31,7 +25,7 @@ export const BankStatement = () => {
             <div key={index}>
               <p className="p-extract p-bold">{eachExtract.name}</p>
               <p className="p-extract span-date-value">
-                <span>{eachExtract.date.split("T")[0]}</span>
+                <span>{eachExtract.date}</span>
                 <span>R$ {eachExtract.value}</span>
               </p>
               <p className="p-margin"></p>

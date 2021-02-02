@@ -40,37 +40,81 @@
       "accounts": [
         {
           "accountManager": {
-            "email": "teste@teste.com"
+            "name": "José",
+            "email": "jose@itauteste.com",
+            "tel": "011-0000-0000"
           },
           "agency": "1234-5",
           "accountNumber": "123344-6",
           "creditExpenses": 300,
           "balance": 10000,
-          "accountExtract": {
-            "value": 20000
-          }
+          "accountExtract": [
+            {
+              "name": "Mercado Extra",
+              "date": "12/01/2021",
+              "value": 2000
+            },
+            {
+              "name": "Auto peças",
+              "date": "15/01/2021",
+              "value": 8000
+            },
+            {
+              "name": "Show",
+              "date": "25/01/2021",
+              "value": 5000
+            },
+            {
+              "name": "Faculdade",
+              "date": "30/01/2021",
+              "value": 5000
+            }
+          ]
         }
       ],
       "bankNumber": "123",
-      "name": "Nu Bank"
+      "name": "Nu Bank",
+      "central-tel": "0800-000-000"
     },
     {
       "accounts": [
         {
           "accountManager": {
-            "email": "teste@teste.com"
+            "name": "José",
+            "email": "jose@itauteste.com",
+            "tel": "011-0000-0000"
           },
-          "agency": "1234-5",
-          "accountNumber": "123344-6",
-          "creditExpenses": 300,
+          "agency": "7895-5",
+          "accountNumber": "009874-6",
+          "creditExpenses": 400,
           "balance": 50000,
-          "accountExtract": {
-            "value": 10000
-          }
+          "accountExtract": [
+            {
+              "name": "Mercado Sol",
+              "date": "12/01/2021",
+              "value": 2000
+            },
+            {
+              "name": "Mecanica",
+              "date": "15/01/2021",
+              "value": 8000
+            },
+            {
+              "name": "Viagem",
+              "date": "25/01/2021",
+              "value": 5000
+            },
+            {
+              "name": "Bootcamp",
+              "date": "30/01/2021",
+              "value": 5000
+            }
+          ]
         }
       ],
-      "bankNumber": "123",
-      "name": "Nu Bank"
+      "bankNumber": "456",
+      "name": "Itaú",
+      "central-tel": "0800-000-000"
     }
   ]
 }

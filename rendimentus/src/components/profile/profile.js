@@ -31,9 +31,9 @@ export const Profile = () => {
     let totalCredit = 0;
     banks.forEach(bank => {
       let extract = bank.accounts[0].accountExtract;
-      creditArray.push(extract);
+      extract.filter(value => creditArray.push(value.value));
     });
-    totalCredit += creditArray.reduce((total, launch) => total += launch.value, 0);
+    totalCredit += creditArray.reduce((total, launch) => total += launch, 0);
     return totalCredit;
   };
 
